@@ -66,6 +66,10 @@ function NarrowItDownController(MenuSearchService) {
   ctrl.removeItem = function(index) {
     ctrl.found.splice(index, 1);
   };
+
+  ctrl.hasItems = function() {
+    return ctrl.found.length > 0;
+  }
 }
 
 })();

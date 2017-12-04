@@ -1,7 +1,7 @@
-<ol>
+<ul>
   <li ng-repeat="item in ctrl.foundItems">
-    ({{ item.short_name }}) - {{ item.name }}
-    <button ng-click="ctrl.onRemove({index: $index});">Remove Item</button>
+    {{item.name}}, {{ item.short_name }}, {{ item.description }}
+    <button ng-click="ctrl.onRemove({index: $index});">Don't want this one!</button>
   </li>
-</ol>
-<!-- <div class="error" ng-if="list.cookiesInList()">WARNING! WARNING! COOKIES DETECTED!</div> -->
+</ul>
+<div class="error" ng-if="ctrl.hasItems()">Nothing found!</div>

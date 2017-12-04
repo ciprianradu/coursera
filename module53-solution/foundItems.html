@@ -4,4 +4,4 @@
     <button ng-click="ctrl.onRemove({index: $index});">Don't want this one!</button>
   </li>
 </ul>
-<div class="error" ng-if="ctrl.foundItems.length>0">Nothing found!</div>
+<div class="error" ng-if="ctrl.foundItems.length===0">Nothing found!</div>

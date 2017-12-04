@@ -12,7 +12,7 @@ function foundItems(){
     restrict: "E",
     templateUrl: "foundItems.html",
     scope: {
-      found: '<',
+      foundItems: '<',
       onRemove: '&'
     },
     controller: NarrowItDownController,

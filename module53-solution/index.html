@@ -24,7 +24,7 @@
 <li ng-repeat="item in ctrl.found">{{item.description}}</li>
 </ul> -->
     <!-- found-items should be implemented as a component -->
-    <found-items found-items="list.found" on-remove="list.removeItem(index)"></found-items>
+    <found-items found-items="ctrl.found" on-remove="ctrl.removeItem(index)"></found-items>
    </div>
   </body>
 </html>

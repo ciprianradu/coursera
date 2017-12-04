@@ -33,7 +33,7 @@ function MenuSearchService($http, ApiBasePath) {
       url: (ApiBasePath + "/menu_items.json")
     }).then(function(result) {
       var foundItems = result.data.menu_items.filter(function(value) {
-        return value.description.indexOf(searchTerm) != -1;
+        return value.description.toLowerCase().indexOf(searchTerm.toLowerCase()) != -1;
       });
 
       return foundItems;

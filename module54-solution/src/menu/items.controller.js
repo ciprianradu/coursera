@@ -4,12 +4,13 @@
 angular.module('data')
 .controller('MenuItemsController', MenuItemsController);
 
-MenuItemsController.$inject = ['items'];
-function MenuItemsController(items) {
-  console.log(items);
-  
-  var mainList = this;
-  mainList.items = items;
+MenuItemsController.$inject = ['data'];
+function MenuItemsController(data) {
+  console.log(data);
+
+  var itemCtrl = this;
+  itemCtrl.categoryShortName = data.category.short_name;
+  itemCtrl.items = data.menu_items;
 }
 
 })();

@@ -29,7 +29,7 @@ function RoutesConfig($stateProvider, $urlRouterProvider) {
         return MenuDataService.getAllCategories();
       }]
     }
-  });
+  })
 
   // Premade list page
   .state('items', {

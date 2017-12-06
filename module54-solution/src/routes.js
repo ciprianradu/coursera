@@ -28,7 +28,7 @@ function RoutesConfig($stateProvider, $urlRouterProvider) {
       categories: ['MenuDataService', function (MenuDataService) {
         return MenuDataService.getAllCategories()
           .then(function (result) {
-            return result;
+            return result.data;
           });
       }]
     }
@@ -43,7 +43,7 @@ function RoutesConfig($stateProvider, $urlRouterProvider) {
       items: ['$stateParams', 'MenuDataService', function ($stateParams, MenuDataService) {
         return MenuDataService.getAllItemsForCategory($stateParams.category)
           .then(function (result) {
-            return result;
+            return result.data;
           });
       }]
     }

@@ -2,7 +2,7 @@
 
 <h3>Menu Categories</h3>
 <ul>
-  <li ng-repeat="category in catCtrl.categories" ui-sref="category.items({category: category.short_name})">
+  <li ng-repeat="category in catCtrl.categories" ui-sref="items({category: category.short_name})">
     ({{ category.short_name }}) - {{ category.name }}
   </li>
 </ul>

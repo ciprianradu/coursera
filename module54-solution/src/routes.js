@@ -35,7 +35,7 @@ function RoutesConfig($stateProvider, $urlRouterProvider) {
   })
 
   // Premade list page
-  .state('category.items', {
+  .state('items', {
     url: '/items?category=',
     templateUrl: 'src/menu/templates/items.template.html',
     controller: 'MenuItemsController as itemCtrl',

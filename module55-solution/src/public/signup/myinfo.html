@@ -1,6 +1,8 @@
-<div>User name: {{$ctrl.firstName}} {{$ctrl.lastName}}</div>
-<div>User email: {{$ctrl.email}}</div>
-<div>User favorite dish</div>
-<menu-item menu-item="$ctrl.favoriteDishItem"></menu-item>
+<div class="container">
+  <div>User name: {{$ctrl.firstName}} {{$ctrl.lastName}}</div>
+  <div>User email: {{$ctrl.email}}</div>
+  <div>User favorite dish</div>
+  <menu-item menu-item="$ctrl.favoriteDishItem"></menu-item>
 
-<div ng-if="!$ctrl.firstName">Not Signed Up Yet</div>
+  <div ng-if="!$ctrl.firstName">Not Signed Up Yet</div>
+</div>

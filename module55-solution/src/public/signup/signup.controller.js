@@ -30,7 +30,7 @@ function SignupController(MyInfoService) {
       return;
     }
 
-    console.log("setting up my info: ", myInfo);
+    console.log("setting up my info on $ctrl: ", myInfo);
 
     $ctrl.firstName = myInfo.firstName;
     $ctrl.lastName = myInfo.lastName;

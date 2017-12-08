@@ -19,32 +19,19 @@ function MyInfoService(MenuService) {
   service.getMyInfo = function () {
     var response;
 
-    console.log("my info: ", service.myInfo);
+    console.log("getting my info: ", service.myInfo);
 
     if (service.myInfo && service.myInfo.favoriteDish !== '') {
-      response = service.getFavoriteDish(service.myInfo.favoriteDish);
-      if (response.itemRetrivalErrorMessage !== undefined) {
-        service.myInfo.itemRetrivalErrorMessage = response.itemRetrivalErrorMessage;
-      }
-      else {
-        service.myInfo.favoriteDishItem = response;
-      }
+      MenuService.getMenuItem(service.myInfo.favoriteDish)
+        .then(function(response){
+          service.myInfo.favoriteDishItem = response;
+        })
+        .catch(function(response) {
+          service.myInfo.itemRetrivalErrorMessage = "Went after the item and got an error: '" + response.statusText + "'. Try by id, because the specification is wrong!";
+        });
     }
 
     return service.myInfo;
-  };
-
-  service.getFavoriteDish = function (dish) {
-    var item = {};
-    MenuService.getMenuItem(dish)
-      .then(function(response){
-        item = response;
-      })
-      .catch(function(response) {
-        item.itemRetrivalErrorMessage = "Went after the item and got an error: '" + response.statusText + "'. Try by id, because the specification is wrong!";
-      });
-
-      return item;
   };
 
   service.setMyInfo = function (myInfo) {

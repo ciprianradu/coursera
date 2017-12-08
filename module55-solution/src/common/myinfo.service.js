@@ -27,7 +27,7 @@ function MyInfoService(MenuService) {
           service.myInfo.favoriteDishItem = response;
         })
         .catch(function(response) {
-          service.myInfo.itemRetrivalErrorMessage = "Went after the item and got an error: '" + response.statusText + "'. Try by id, because the specification is wrong!";
+          service.myInfo.itemRetrivalErrorMessage = "No such menu item exists. Try by id, because the specification is wrong!";
         });
     }
 

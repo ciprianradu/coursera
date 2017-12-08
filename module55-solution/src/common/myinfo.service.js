@@ -22,7 +22,7 @@ function MyInfoService(MenuService) {
       MenuService.getMenuItem(service.myInfo.favoriteDish)
         .then(function(response){
           console.log("retrived the item: ", response);
-          service.myInfo.favoriteDishItem = response.data;
+          service.myInfo.favoriteDishItem = response;
         })
         .catch(function(response) {
           console.log("caught an error: ", response);

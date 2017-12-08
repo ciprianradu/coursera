@@ -19,12 +19,12 @@ function MyInfoService(MenuService) {
 
   service.getMyInfo = function () {
     if (service.myInfo && service.myInfo.favoriteDish !== '') {
-      console.log("going to retrive the item");
-      MenuService.getMenuItem(service.myInfo.favoriteDish).then(function(response){
-        console.log("value retrived: ", response.data);
+      MenuService.getMenuItem(service.myInfo.favoriteDish)
+      .then(function(response){
         service.myInfo.favoriteDishItem = response.data;
-      }, function (error) {
-        service.myInfo.itemRetrivalErrorMessage = error + " Try by id, because the specification is wrong!";
+      })
+      .catch(function(response) {
+        service.myInfo.itemRetrivalErrorMessage = "Went after the item and got an error: " + response.status + " Try by id, because the specification is wrong!";
       });
     }
 

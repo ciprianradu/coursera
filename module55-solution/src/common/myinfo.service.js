@@ -26,11 +26,12 @@ function MyInfoService(MenuService) {
       })
       .catch(function(response) {
         console.log("caught an error: ", response);
-        service.myInfo.itemRetrivalErrorMessage = "Went after the item and got an error: " + response.status + " Try by id, because the specification is wrong!";
+        service.myInfo.itemRetrivalErrorMessage = "Went after the item and got an error: '" + response.statusText + "'. Try by id, because the specification is wrong!";
+      })
+      .finally(function(){
+        return service.myInfo;
       });
     }
-
-    return service.myInfo;
   };
 
   service.setMyInfo = function (myInfo) {

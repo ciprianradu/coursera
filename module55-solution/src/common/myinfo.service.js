@@ -6,6 +6,7 @@ angular.module('common')
 
 
 MenuService.$inject = ['MenuService'];
+
 function MyInfoService(MenuService) {
   var service = this;
 
@@ -22,6 +23,7 @@ function MyInfoService(MenuService) {
       MenuService.getMenuItem(service.myInfo.favoriteDish).then(function(response){
         service.myInfo.favoriteDishItem = response.data;
       });
+    }
 
     return service.myInfo;
   };
@@ -29,6 +31,6 @@ function MyInfoService(MenuService) {
   service.setMyInfo = function (myInfo) {
     service.myInfo = myInfo;
   };
-}
+};
 
 })();

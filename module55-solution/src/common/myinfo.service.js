@@ -21,8 +21,8 @@ function MyInfoService(MenuService) {
       myInfo.favoriteDish !== '' &&
       (service.myInfo.favoriteDishItem === undefined ||
        (service.myInfo.favoriteDishItem !== undefined &&
-        service.myInfo.favoriteDish !== service.myInfo.favoriteDishItem.id &&
-        service.myInfo.favoriteDish !== service.myInfo.favoriteDishItem.short_name));
+        service.myInfo.favoriteDish != service.myInfo.favoriteDishItem.id &&
+        service.myInfo.favoriteDish != service.myInfo.favoriteDishItem.short_name));
   }
 
   service.getMyInfo = function () {

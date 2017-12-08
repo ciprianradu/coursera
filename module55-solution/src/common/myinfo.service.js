@@ -5,8 +5,7 @@ angular.module('common')
 .service('MyInfoService', MyInfoService);
 
 
-MenuService.$inject = ['MenuService'];
-
+MyInfoService.$inject = ['MenuService'];
 function MyInfoService(MenuService) {
   var service = this;
 

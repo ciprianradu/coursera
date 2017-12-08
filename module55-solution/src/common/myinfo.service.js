@@ -17,9 +17,12 @@ function MyInfoService(MenuService) {
   };
 
   service.getMyInfo = function () {
+    var response;
+
     console.log("my info: ", service.myInfo);
+
     if (service.myInfo && service.myInfo.favoriteDish !== '') {
-      var reponse = service.getFavoriteDish(service.myInfo.favoriteDish);
+      response = service.getFavoriteDish(service.myInfo.favoriteDish);
       if (reponse.itemRetrivalErrorMessage !== undefined) {
         service.myInfo.itemRetrivalErrorMessage = response.itemRetrivalErrorMessage;
       }

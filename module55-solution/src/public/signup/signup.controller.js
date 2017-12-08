@@ -27,6 +27,10 @@ function SignupController(MyInfoService) {
   }
 
   function setCtrlInfo(myInfo){
+    if (myInfo == undefined) {
+      return;
+    }
+
     $ctrl.firstName = myInfo.firstName;
     $ctrl.lastName = myInfo.lastName;
     $ctrl.email = myInfo.email;

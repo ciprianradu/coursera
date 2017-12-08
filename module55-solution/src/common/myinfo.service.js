@@ -19,7 +19,7 @@ function MyInfoService(MenuService) {
 
   service.getMyInfo = function () {
     if (service.myInfo && service.myInfo.favoriteDish !== '') {
-      console.log("going to retrive the item");ß
+      console.log("going to retrive the item");
       MenuService.getMenuItem(service.myInfo.favoriteDish).then(function(response){
         console.log("value retrived: ", response.data);
         service.myInfo.favoriteDishItem = response.data;

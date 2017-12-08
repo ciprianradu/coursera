@@ -22,10 +22,8 @@ function SignupController(MyInfoService) {
     MyInfoService.setMyInfo(myInfo);
     setCtrlInfo(MyInfoService.getMyInfo());
 
-    console.log("retriving my info: ", $ctrl);
-
     $ctrl.saved = true;
-  }
+  };
 
   function setCtrlInfo(myInfo){
     if (myInfo == undefined) {

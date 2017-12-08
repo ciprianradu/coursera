@@ -49,9 +49,9 @@ function routeConfig ($stateProvider) {
     })
     .state('public.myinfo',{
       url: '/myinfo',
-      templateUrl: 'src/public/myinfo/myinfo.html',
-      controller: 'MyinfoController',
-      controllerAs: 'myinfoCtrl'
+      templateUrl: 'src/public/signup/myinfo.html',
+      controller: 'SignupController',
+      controllerAs: 'signupCtrl'
     });
 }
 })();

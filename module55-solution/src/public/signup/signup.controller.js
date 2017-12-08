@@ -9,6 +9,7 @@ function SignupController(MyInfoService) {
   var $ctrl = this;
   var myInfo = MyInfoService.getMyInfo();
 
+  $ctrl.saved = false;
   $ctrl.firstName = myInfo.firstName;
   $ctrl.lastName = myInfo.lastName;
   $ctrl.email = myInfo.email;
@@ -25,6 +26,8 @@ function SignupController(MyInfoService) {
     myInfo.favoriteDish = $ctrl.favoriteDish;
 
     MyInfoService.setMyInfo(myInfo);
+
+    $ctrl.saved = true;
   }
 }
 

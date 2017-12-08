@@ -3,41 +3,41 @@
 <div class="container">
   <fieldset>
     <form name="signupForm" novalidate>
-      <input type="text" name="firstName" placeholder="First Name" ng-model="$ctrl.firstName" required>
+      <input type="text" name="firstName" placeholder="First Name" ng-model="signupCtrl.firstName" required>
       <span
         ng-if="signupForm.firstName.$error.required && signupForm.firstName.$touched">
         First name is required!
       </span>
       <br>
 
-      <input type="text" name="lastName" placeholder="Last Name" ng-model="$ctrl.lastName" required>
+      <input type="text" name="lastName" placeholder="Last Name" ng-model="signupCtrl.lastName" required>
       <span
         ng-if="signupForm.lastName.$error.required && signupForm.lastName.$touched">
         Last name is required!
       </span>
       <br>
 
-      <input type="email" name="email" placeholder="Email" ng-model="$ctrl.email" required>
+      <input type="email" name="email" placeholder="Email" ng-model="signupCtrl.email" required>
       <span
         ng-if="signupForm.email.$invalid && signupForm.email.$touched">
         Must be a valid email address: handle@domain format
       </span>
       <br>
 
-      <input type="text" name="phone" placeholder="xxx-xxx-xxxx" ng-model="$ctrl.phone" pattern="(\d{3})-(\d{3})-(\d{4})">
+      <input type="text" name="phone" placeholder="xxx-xxx-xxxx" ng-model="signupCtrl.phone" pattern="(\d{3})-(\d{3})-(\d{4})">
       <span ng-if="signupForm.phone.$invalid && signupForm.phone.$touched">
         Phone must be in the format ###-###-####.
       </span>
       <br>
 
-      <input type="text" name="favoriteDish" placeholder="Favorite dish" ng-model="$ctrl.favoriteDish">
+      <input type="text" name="favoriteDish" placeholder="Favorite dish" ng-model="signupCtrl.favoriteDish">
 
       <button
         ng-disabled="signupForm.$invalid"
-        ng-click="$ctrl.signup()">Submit</button>
+        ng-click="signupCtrl.signup()">Submit</button>
 
       <br>
-      <div ng-if="$ctrl.saved">Your information has been saved!</div>
+      <div ng-if="signupCtrl.saved">Your information has been saved!</div>
     </form>
   </fieldset>
 </div>

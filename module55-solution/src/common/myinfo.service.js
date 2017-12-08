@@ -16,12 +16,21 @@ function MyInfoService(MenuService) {
     favoriteDish: ''
   };
 
+  function shouldRetriveFavoriteDish(myInfo) {
+    return myInfo !== undefined &&
+      myInfo.favoriteDish !== '' &&
+      (service.myInfo.favoriteDishItem === undefined ||
+       (service.myInfo.favoriteDishItem !== undefined &&
+        service.myInfo.favoriteDish !== service.myInfo.favoriteDishItem.id &&
+        service.myInfo.favoriteDish !== service.myInfo.favoriteDishItem.short_name));
+  }
+
   service.getMyInfo = function () {
-    var response;
-
     console.log("getting my info: ", service.myInfo);
+    var retriveFavoriteDish = shouldRetriveFavoriteDish(service.myInfo);
+    console.log("retrive favorite dish:", retriveFavoriteDish);
 
-    if (service.myInfo && service.myInfo.favoriteDish !== '') {
+    if (retriveFavoriteDish) {
       MenuService.getMenuItem(service.myInfo.favoriteDish)
         .then(function(response){
           service.myInfo.favoriteDishItem = response;

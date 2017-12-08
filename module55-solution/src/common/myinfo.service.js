@@ -23,7 +23,7 @@ function MyInfoService(MenuService) {
 
     if (service.myInfo && service.myInfo.favoriteDish !== '') {
       response = service.getFavoriteDish(service.myInfo.favoriteDish);
-      if (reponse.itemRetrivalErrorMessage !== undefined) {
+      if (response.itemRetrivalErrorMessage !== undefined) {
         service.myInfo.itemRetrivalErrorMessage = response.itemRetrivalErrorMessage;
       }
       else {

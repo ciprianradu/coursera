@@ -15,7 +15,7 @@ function SignupController(MyInfoService) {
   $ctrl.email = myInfo.email;
   $ctrl.phone = myInfo.phone;
   $ctrl.favoriteDish = myInfo.favoriteDish;
-  $strl.favoriteDishItem = myInfo.favoriteDishItem;
+  $ctrl.favoriteDishItem = myInfo.favoriteDishItem;
 
   $ctrl.signup = function() {
     var myInfo = {};

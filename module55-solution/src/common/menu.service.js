@@ -15,7 +15,6 @@ function MenuService($http, ApiPath) {
     });
   };
 
-
   service.getMenuItems = function (category) {
     var config = {};
     if (category) {
@@ -27,8 +26,8 @@ function MenuService($http, ApiPath) {
     });
   };
 
-  service.getMenuItem = function (name) {
-    return $http.get(ApiPath + '/menu_items/' + name + '.json').then(function (response) {
+  service.getMenuItem = function (item) {
+    return $http.get(ApiPath + '/menu_items/' + item + '.json').then(function (response) {
       return response.data;
     });
   };

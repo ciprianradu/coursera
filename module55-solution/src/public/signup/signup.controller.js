@@ -8,7 +8,7 @@ SignupController.$inject = ['MyInfoService', 'ApiPath'];
 function SignupController(MyInfoService, ApiPath) {
   var $ctrl = this;
   $ctrl.saved = false;
-  $ctrl.basePath = ApiPath;
+  //$ctrl.basePath = ApiPath;
 
   setCtrlInfo(MyInfoService.getMyInfo());
 

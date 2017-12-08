@@ -7,7 +7,6 @@ angular.module('common')
 MyInfoService.$inject = ['MenuService'];
 function MyInfoService(MenuService) {
   var service = this;
-
   service.myInfo = service.myInfo || {
     firstName: '',
     lastName: '',

@@ -2,7 +2,7 @@
   <div ng-if="signupCtrl.favoriteDishItem">{{signupCtrl.favoriteDishItem | json}}</div>
   <div ng-if="signupCtrl.firstName">User name: {{signupCtrl.firstName}} {{signupCtrl.lastName}}</div>
   <div ng-if="signupCtrl.email">User email: {{signupCtrl.email}}</div>
-  <menu-item ng-if="signupCtrl.firstName" menu-item="signupCtrl.favoriteDishItem"></menu-item>
+  <menu-item ng-if="signupCtrl.favoriteDishItem" menu-item="signupCtrl.favoriteDishItem"></menu-item>
 
   <div ng-if="!signupCtrl.firstName">Not Signed Up Yet</div>
 </div>

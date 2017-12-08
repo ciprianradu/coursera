@@ -17,6 +17,7 @@ function MyInfoService(MenuService) {
   };
 
   service.getMyInfo = function () {
+    console.log("my info: ", service.myInfo);
     if (service.myInfo && service.myInfo.favoriteDish !== '') {
       MenuService.getMenuItem(service.myInfo.favoriteDish)
         .then(function(response){

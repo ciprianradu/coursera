@@ -20,16 +20,19 @@ function SignupController(MyInfoService) {
     myInfo.favoriteDish = $ctrl.favoriteDish;
 
     MyInfoService.setMyInfo(myInfo);
+    setCtrlInfo(MyInfoService.getMyInfo());
+
+    console.log("retriving my info: ", $ctrl);
 
     $ctrl.saved = true;
-
-    setCtrlInfo(MyInfoService.getMyInfo());
   }
 
   function setCtrlInfo(myInfo){
     if (myInfo == undefined) {
       return;
     }
+
+    console.log("retriving my info: ", myInfo);
 
     $ctrl.firstName = myInfo.firstName;
     $ctrl.lastName = myInfo.lastName;

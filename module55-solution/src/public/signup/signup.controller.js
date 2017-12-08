@@ -7,15 +7,9 @@ angular.module('public')
 SignupController.$inject = ['MyInfoService'];
 function SignupController(MyInfoService) {
   var $ctrl = this;
-  var myInfo = MyInfoService.getMyInfo();
-
   $ctrl.saved = false;
-  $ctrl.firstName = myInfo.firstName;
-  $ctrl.lastName = myInfo.lastName;
-  $ctrl.email = myInfo.email;
-  $ctrl.phone = myInfo.phone;
-  $ctrl.favoriteDish = myInfo.favoriteDish;
-  $ctrl.favoriteDishItem = myInfo.favoriteDishItem;
+
+  setCtrlInfo(MyInfoService.getMyInfo());
 
   $ctrl.signup = function() {
     var myInfo = {};
@@ -28,6 +22,18 @@ function SignupController(MyInfoService) {
     MyInfoService.setMyInfo(myInfo);
 
     $ctrl.saved = true;
+
+    setCtrlInfo(MyInfoService.getMyInfo());
+  }
+
+  function setCtrlInfo(myInfo){
+    $ctrl.firstName = myInfo.firstName;
+    $ctrl.lastName = myInfo.lastName;
+    $ctrl.email = myInfo.email;
+    $ctrl.phone = myInfo.phone;
+    $ctrl.favoriteDish = myInfo.favoriteDish;
+    $ctrl.favoriteDishItem = myInfo.favoriteDishItem;
+    $ctrl.itemRetrivalErrorMessage = myInfo.itemRetrivalErrorMessage;
   }
 }
 

@@ -23,6 +23,8 @@ function MyInfoService(MenuService) {
       MenuService.getMenuItem(service.myInfo.favoriteDish).then(function(response){
         console.log("value retrived: ", response.data);
         service.myInfo.favoriteDishItem = response.data;
+      }, function (error) {
+        service.myInfo.itemRetrivalErrorMessage = error + " Try by id, because the specification is wrong!";
       });
     }
 

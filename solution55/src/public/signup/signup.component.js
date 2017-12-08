@@ -15,12 +15,15 @@ function SignupController(MenuService, MyInfoService) {
   $ctrl.signup = function() {
     MenuService.getMenuItem($ctrl.myInfo.favoriteDish)
       .then(function(response){
-        $ctrl.saved = true;
+        $ctrl.myInfo.favoriteDishItemNotFound = false;
         $ctrl.myInfo.favoriteDishItem = response;
         MyInfoService.setMyInfo($ctrl.myInfo);
       })
       .catch(function(response){
-        $ctrl.saved = false;
+        $ctrl.myInfo.favoriteDishItemNotFound = true;
+      })
+      .finally(function(response){
+        $ctrl.saved = true;
       });
   };
 }

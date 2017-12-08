@@ -31,7 +31,7 @@
       <br>
 
       <input type="text" name="favoriteDish" placeholder="Favorite dish" ng-model="$ctrl.myInfo.favoriteDish">
-      <span ng-if="$ctrl.saved === false">
+      <span ng-if="$ctrl.myInfo.favoriteDishItemNotFound">
         No such menu number exists.
       </span>
       <br>
